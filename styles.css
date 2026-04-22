@@ -629,12 +629,17 @@ input {
 }
 
 .footer {
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6px;
   margin-top: 28px;
   padding: 18px 6px 0;
   color: var(--muted);
+}
+
+.footer p {
+  margin: 0;
 }
 
 .reveal {
@@ -752,6 +757,21 @@ input {
   .attendee-flow-grid,
   .audience-section {
     grid-template-columns: 1fr;
+  }
+
+  .value-strip,
+  .launch-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value-strip > * {
+    width: 100%;
+    flex: none;
+  }
+
+  .value-strip h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
   .value-strip,
