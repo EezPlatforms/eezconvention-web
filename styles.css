@@ -185,6 +185,12 @@ input {
   margin: 20px 0 0;
 }
 
+.hero-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -593,39 +599,17 @@ input {
 }
 
 .launch-copy,
-.waitlist-form {
+.waitlist-card {
   flex: 1;
 }
 
-.waitlist-form {
+.waitlist-card {
   display: grid;
   gap: 14px;
   padding: 24px;
   border-radius: 26px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(244, 249, 255, 0.94));
   border: 1px solid rgba(11, 45, 77, 0.08);
-}
-
-.waitlist-form label {
-  display: grid;
-  gap: 8px;
-  color: var(--navy);
-  font-weight: 700;
-}
-
-.waitlist-form input {
-  width: 100%;
-  min-height: 54px;
-  padding: 0 16px;
-  border: 1px solid rgba(11, 45, 77, 0.12);
-  border-radius: 16px;
-  background: #fff;
-  color: var(--text);
-}
-
-.waitlist-form input:focus {
-  outline: 2px solid rgba(255, 106, 0, 0.18);
-  border-color: rgba(255, 106, 0, 0.42);
 }
 
 .form-note {

@@ -28,7 +28,12 @@
           <a href="#workflow">Workflow</a>
           <a href="#launch">Launch</a>
         </nav>
-        <a class="button button-ghost" href="#launch">Join Waitlist</a>
+        <a
+          class="button button-ghost"
+          href="mailto:hello@eezconvention.com?subject=eezconvention%20Waitlist"
+        >
+          Join Waitlist
+        </a>
       </header>
 
       <main>
@@ -50,6 +55,9 @@
               <li>Tracks budgets, vendors, invoices, and receipts</li>
               <li>Supports convention creation, discovery, registration, check-in, agenda, and attendee exploration</li>
             </ul>
+            <p class="hero-note">
+              Want early access? Email us and we&apos;ll add you to the launch list.
+            </p>
           </div>
 
           <div class="hero-visual reveal">
@@ -329,23 +337,17 @@
               expands around the mobile platform.
             </p>
           </div>
-
-          <form class="waitlist-form" id="waitlist-form">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" required />
-            </label>
-            <label>
-              <span>Role</span>
-              <input type="text" name="role" placeholder="Convention admin, committee chair, attendee..." />
-            </label>
-            <button class="button button-primary button-full" type="submit">Join the Waitlist</button>
-            <p class="form-note" id="form-note">No spam. Just launch updates and early access news.</p>
-          </form>
+          <div class="waitlist-card">
+            <p class="form-note">
+              The waitlist now goes straight to email so interested organizers and attendees can reach out directly.
+            </p>
+            <a
+              class="button button-primary button-full"
+              href="mailto:hello@eezconvention.com?subject=eezconvention%20Waitlist&body=Hi%2C%20I%27d%20like%20to%20join%20the%20eezconvention%20waitlist."
+            >
+              Email to Join the Waitlist
+            </a>
+          </div>
         </section>
       </main>
 
@@ -354,7 +356,6 @@
         <p>Convention operations, simplified.</p>
       </footer>
     </div>
-
     <script src="./script.js"></script>
   </body>
 </html>
