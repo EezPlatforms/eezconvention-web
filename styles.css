@@ -28,10 +28,7 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-section[id] {
-  scroll-margin-top: 110px;
+  overflow-x: hidden;
 }
 
 body {
@@ -39,6 +36,7 @@ body {
   min-width: 320px;
   font-family: "DM Sans", sans-serif;
   color: var(--text);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(255, 106, 0, 0.18), transparent 28%),
     radial-gradient(circle at 90% 12%, rgba(31, 132, 218, 0.2), transparent 18%),
@@ -63,6 +61,7 @@ input {
 }
 
 .topbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 16px;
   z-index: 20;
@@ -137,6 +136,11 @@ input {
   align-items: center;
   gap: 44px;
   padding: 42px 0 60px;
+}
+
+.hero-copy,
+.hero-visual {
+  min-width: 0;
 }
 
 .eyebrow,
@@ -229,6 +233,7 @@ input {
 
 .hero-visual {
   position: relative;
+  width: 100%;
   min-height: 620px;
   display: flex;
   align-items: center;
@@ -276,7 +281,8 @@ input {
 
 .device-card {
   position: relative;
-  width: min(100%, 520px);
+  width: 100%;
+  max-width: 520px;
   padding: 24px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 36px;
@@ -670,13 +676,20 @@ input {
 
 @media (max-width: 780px) {
   .site-shell {
-    width: min(calc(100% - 20px), var(--container));
+    width: min(calc(100% - 16px), var(--container));
     padding-top: 10px;
   }
 
   .topbar {
     position: static;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .brand {
+    width: 100%;
     justify-content: center;
   }
 
@@ -686,6 +699,10 @@ input {
     flex-wrap: wrap;
     gap: 16px;
     font-size: 0.95rem;
+  }
+
+  .topbar > .button-ghost {
+    width: 100%;
   }
 
   .hero {
@@ -701,9 +718,12 @@ input {
 
   .hero-visual {
     min-height: auto;
+    overflow: hidden;
   }
 
   .device-card {
+    width: 100%;
+    max-width: 100%;
     padding: 18px;
     border-radius: 28px;
   }
@@ -718,12 +738,31 @@ input {
     margin: 0 auto 14px;
   }
 
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-points li {
+    align-items: flex-start;
+  }
+
   .stat-grid,
   .feature-grid,
   .timeline,
   .attendee-flow-grid,
   .audience-section {
     grid-template-columns: 1fr;
+  }
+
+  .value-strip,
+  .launch-section,
+  .feature-card,
+  .timeline-step,
+  .audience-card,
+  .attendee-overview,
+  .attendee-step,
+  .waitlist-card {
+    padding: 20px;
   }
 
   .value-strip,
