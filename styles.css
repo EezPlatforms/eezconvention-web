@@ -160,10 +160,12 @@ input {
 }
 
 .hero h1,
+.support-hero h1,
 .section-heading h2,
 .value-strip h2,
 .audience-card.large h2,
-.launch-copy h2 {
+.launch-copy h2,
+.response-section h2 {
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
   line-height: 0.98;
@@ -178,6 +180,10 @@ input {
 }
 
 .hero-text,
+.support-hero p,
+.support-copy p,
+.faq-item p,
+.response-list p,
 .value-strip p,
 .feature-card p,
 .timeline-step p,
@@ -191,6 +197,128 @@ input {
 .hero-text {
   max-width: 60ch;
   margin: 20px 0 0;
+}
+
+.support-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  align-items: stretch;
+  gap: 24px;
+  padding: 42px 0 44px;
+}
+
+.support-hero h1 {
+  margin-top: 14px;
+  max-width: 12ch;
+  font-size: clamp(3rem, 7vw, 5.2rem);
+}
+
+.support-hero p {
+  max-width: 64ch;
+  margin: 20px 0 0;
+}
+
+.support-contact,
+.support-section,
+.faq-item,
+.response-section,
+.response-list article {
+  border: 1px solid rgba(11, 45, 77, 0.08);
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(245, 249, 255, 0.9));
+  box-shadow: 0 16px 34px rgba(13, 47, 87, 0.05);
+}
+
+.support-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 28px;
+}
+
+.support-contact a {
+  margin-top: 12px;
+  color: var(--navy);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.support-contact p {
+  margin-bottom: 0;
+}
+
+.support-section {
+  padding: 34px;
+  margin-top: 34px;
+}
+
+.support-heading {
+  margin: 0 0 22px;
+}
+
+.support-copy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.support-copy p {
+  margin: 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.faq-item {
+  padding: 24px;
+}
+
+.faq-item h3,
+.response-list h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 1.25rem;
+}
+
+.faq-item p {
+  margin: 0;
+}
+
+.response-section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+  gap: 28px;
+  align-items: start;
+  padding: 34px;
+  margin-top: 34px;
+}
+
+.response-section h2 {
+  margin-top: 10px;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+}
+
+.response-list {
+  display: grid;
+  gap: 16px;
+}
+
+.response-list article {
+  padding: 22px;
+}
+
+.response-list h3 {
+  margin-top: 14px;
+}
+
+.response-list p {
+  margin: 0;
 }
 
 .hero-note {
@@ -666,11 +794,14 @@ input {
   }
 
   .timeline,
-  .attendee-flow-grid {
+  .attendee-flow-grid,
+  .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .attendee-layout {
+  .attendee-layout,
+  .support-hero,
+  .response-section {
     grid-template-columns: 1fr;
   }
 
@@ -755,6 +886,8 @@ input {
   .feature-grid,
   .timeline,
   .attendee-flow-grid,
+  .support-copy,
+  .faq-grid,
   .audience-section {
     grid-template-columns: 1fr;
   }
@@ -776,11 +909,16 @@ input {
 
   .value-strip,
   .launch-section,
+  .support-section,
+  .response-section,
   .feature-card,
   .timeline-step,
   .audience-card,
   .attendee-overview,
   .attendee-step,
+  .support-contact,
+  .faq-item,
+  .response-list article,
   .waitlist-card {
     padding: 20px;
   }
