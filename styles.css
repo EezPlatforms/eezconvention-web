@@ -20,6 +20,7 @@
   --radius-md: 18px;
   --radius-sm: 14px;
   --container: 1180px;
+  --anchor-offset: 112px;
 }
 
 * {
@@ -31,12 +32,19 @@ html {
   overflow-x: hidden;
 }
 
+section[id] {
+  scroll-margin-top: var(--anchor-offset);
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   overflow-x: hidden;
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   background:
     radial-gradient(circle at top left, rgba(255, 106, 0, 0.18), transparent 28%),
     radial-gradient(circle at 90% 12%, rgba(31, 132, 218, 0.2), transparent 18%),
@@ -57,14 +65,16 @@ input {
 .site-shell {
   width: min(calc(100% - 32px), var(--container));
   margin: 0 auto;
-  padding: 20px 0 32px;
+  padding: 112px 0 32px;
 }
 
 .topbar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 16px;
-  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 32px), var(--container));
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,7 +104,8 @@ input {
   align-items: center;
   gap: 24px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .button {
@@ -107,6 +118,7 @@ input {
   border: 1px solid transparent;
   border-radius: 999px;
   font-weight: 700;
+  letter-spacing: -0.01em;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -148,8 +160,8 @@ input {
 .feature-kicker,
 .device-label {
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
   font-weight: 800;
 }
 
@@ -167,8 +179,9 @@ input {
 .launch-copy h2,
 .response-section h2 {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  line-height: 0.98;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 800;
+  line-height: 1.02;
   letter-spacing: -0.04em;
   color: var(--navy);
 }
@@ -190,8 +203,8 @@ input {
 .audience-card p,
 .launch-copy p {
   color: var(--muted);
-  line-height: 1.65;
-  font-size: 1.05rem;
+  line-height: 1.7;
+  font-size: 1.03rem;
 }
 
 .hero-text {
@@ -240,9 +253,9 @@ input {
 .support-contact a {
   margin-top: 12px;
   color: var(--navy);
-  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.45rem, 3vw, 2rem);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   overflow-wrap: anywhere;
 }
 
@@ -284,6 +297,8 @@ input {
   margin: 0 0 10px;
   color: var(--navy);
   font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .faq-item p {
@@ -342,6 +357,7 @@ input {
   list-style: none;
   color: var(--navy);
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .hero-points li {
@@ -442,7 +458,9 @@ input {
 
 .device-top h2 {
   margin: 6px 0 0;
-  font-size: 1.75rem;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--navy);
 }
 
@@ -551,6 +569,7 @@ input {
   display: block;
   margin-bottom: 4px;
   color: var(--navy);
+  letter-spacing: -0.02em;
 }
 
 .queue-item p {
@@ -653,7 +672,9 @@ input {
 
 .attendee-step h3 {
   margin: 12px 0 10px;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--navy);
 }
 
@@ -672,7 +693,9 @@ input {
 .timeline-step h3,
 .audience-card h3 {
   margin: 12px 0 10px;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--navy);
 }
 
@@ -702,8 +725,8 @@ input {
   border-radius: 16px;
   color: var(--accent);
   background: rgba(255, 106, 0, 0.12);
-  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .audience-section {
@@ -811,13 +834,17 @@ input {
 }
 
 @media (max-width: 780px) {
+  :root {
+    --anchor-offset: 162px;
+  }
+
   .site-shell {
     width: min(calc(100% - 16px), var(--container));
-    padding-top: 10px;
+    padding-top: 162px;
   }
 
   .topbar {
-    position: static;
+    width: min(calc(100% - 16px), var(--container));
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
@@ -833,8 +860,8 @@ input {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
-    font-size: 0.95rem;
+    gap: 14px;
+    font-size: 0.82rem;
   }
 
   .topbar > .button-ghost {
@@ -848,8 +875,35 @@ input {
   }
 
   .hero h1 {
-    max-width: 9.5ch;
-    font-size: clamp(2.8rem, 15vw, 4.2rem);
+    max-width: 10ch;
+    font-size: clamp(2.15rem, 11vw, 3.2rem);
+    line-height: 1.03;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-text,
+  .support-hero p,
+  .support-copy p,
+  .faq-item p,
+  .response-list p,
+  .value-strip p,
+  .feature-card p,
+  .timeline-step p,
+  .audience-card p,
+  .launch-copy p {
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+
+  .section-heading h2,
+  .launch-copy h2,
+  .response-section h2,
+  .support-hero h1 {
+    line-height: 1.04;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(1.95rem, 9vw, 2.65rem);
   }
 
   .hero-visual {
@@ -878,6 +932,11 @@ input {
     width: 100%;
   }
 
+  .button {
+    min-height: 46px;
+    font-size: 0.95rem;
+  }
+
   .hero-points li {
     align-items: flex-start;
   }
@@ -904,7 +963,7 @@ input {
   }
 
   .value-strip h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
   }
 
   .value-strip,
